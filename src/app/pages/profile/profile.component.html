@@ -1,0 +1,132 @@
+<div class="container-fluid">
+    <app-page-title title="Profile Management"></app-page-title>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="mb-4 font-size-18">General Setting</h4>
+                    <form [formGroup]="form" (ngSubmit)="onSubmit()">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group mb-2">
+                                    <label for="exampleFirstname">First name</label>
+                                    <input type="text" class="form-control" id="exampleFirstname"
+                                        [ngClass]="{ 'is-invalid': submitted && f['first_name'].errors }"
+                                        formControlName="first_name" placeholder="First name">
+
+                                    <div *ngIf="submitted && f['first_name'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['first_name'].errors['required']">First name is
+                                            required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group mb-2">
+                                    <label for="exampleLastname">Last name</label>
+                                    <input type="text" class="form-control" id="exampleLastname"
+                                        [ngClass]="{ 'is-invalid': submitted && f['last_name'].errors }"
+                                        formControlName="last_name" placeholder="Last name" />
+                                    <div *ngIf="submitted && f['last_name'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['last_name'].errors['required']">Last name is
+                                            required</div>
+                                        <div *ngIf="f['last_name'].errors['pattern']">Enter valid last
+                                            name.</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group mb-2">
+                                    <label for="exampleProfile">Upload profile photo</label>
+                                    <input type="file" class="form-control" id="exampleProfile"
+                                        formControlName="profile_pic"
+                                        [ngClass]="{ 'is-invalid': submitted && f['profile_pic'].errors }" />
+                                    <div *ngIf="submitted && f['profile_pic'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['profile_pic'].errors['required']">Profile pic is
+                                            required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group mb-2">
+                                    <label for="exampleEmail">Email Address</label>
+                                    <input type="text" class="form-control" id="exampleEmail" formControlName="email"
+                                        [ngClass]="{ 'is-invalid': submitted && f['email'].errors }"
+                                        placeholder="Email" />
+                                    <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+                                        <div *ngIf="f['email'].errors['required']">Email is
+                                            required</div>
+
+                                        <div *ngIf="f['email'].errors['pattern']">Enter valid email</div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="card">
+        <div class="card-body">
+            <div class="row">
+                <div class="col-12">
+                    <h4 class="mb-4 font-size-18">Password Setting</h4>
+                    <form [formGroup]="pwdForm" (ngSubmit)="authSubmit()">
+                        <div class="row">
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group mb-2">
+                                    <label for="exampleCurrent_pwd">Current Password</label>
+                                    <input type="password" class="form-control" id="exampleCurrent_pwd"
+                                        [ngClass]="{ 'is-invalid': submitted1 && f1['current_password'].errors }"
+                                        formControlName="current_password" />
+                                    <div *ngIf="submitted1 && f1['current_password'].errors" class="invalid-feedback">
+                                        <div *ngIf="f1['current_password'].errors['required']">Current
+                                            Password
+                                            is
+                                            required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group mb-2">
+                                    <label for="exampleNew_pwd">New Password</label>
+                                    <input type="password" class="form-control" id="exampleNew_pwd"
+                                        [ngClass]="{ 'is-invalid': submitted1 && f1['new_password'].errors }"
+                                        formControlName="new_password" />
+                                    <div *ngIf="submitted1 && f1['new_password'].errors" class="invalid-feedback">
+                                        <div *ngIf="f1['new_password'].errors['required']">New
+                                            Password
+                                            is
+                                            required</div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6 col-sm-12">
+                                <div class="form-group mb-2">
+                                    <label for="exampleConfirm_pwd">Confirm Password</label>
+                                    <input type="password" class="form-control" id="exampleConfirm_pwd"
+                                        formControlName="confirm_password"
+                                        [ngClass]="{ 'is-invalid': submitted1 && f1['confirm_password'].errors }" />
+                                    <div *ngIf="submitted1 && f1['confirm_password'].errors" class="invalid-feedback">
+                                        <div *ngIf="f1['confirm_password'].errors['required']">
+                                            Confirm password is required</div>
+                                        <div *ngIf="f1['confirm_password'].errors['matching']">
+                                            Confirm Password does not match
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                        <div class="mt-3">
+                            <button type="submit" class="btn btn-primary">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

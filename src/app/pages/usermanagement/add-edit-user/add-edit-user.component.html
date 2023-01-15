@@ -1,0 +1,70 @@
+<form [formGroup]="addUserForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+        <div class="col-12 col-md-12">
+            <div class="row">
+                <div class="mb-3 col-md-6">
+                    <label class="col-form-label" for="recipient-name">First Name</label>
+                    <input class="form-control" formControlName="fname" type="text" placeholder="Enter First Name"
+                        [ngClass]="{ 'is-invalid': submitted && f['fname'].errors }">
+                    <div *ngIf="submitted && f['fname'].errors" class="invalid-feedback">
+                        <div *ngIf="f['fname'].errors['required']">
+                            First Name is required</div>
+                    </div>
+                </div>
+                <div class="mb-3 col-md-6">
+                    <label class="col-form-label" for="recipient-name">Last Name</label>
+                    <input class="form-control" formControlName="lname" type="text" placeholder="Enter Last Name"
+                        [ngClass]="{ 'is-invalid': submitted && f['lname'].errors }">
+                    <div *ngIf="submitted && f['lname'].errors" class="invalid-feedback">
+                        <div *ngIf="f['lname'].errors['required']">
+                            Last Name is required</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="mb-3">
+        <label class="col-form-label" for="recipient-name">Email</label>
+        <input class="form-control" formControlName="email" type="email" placeholder="Enter Email"
+            [ngClass]="{ 'is-invalid': submitted && f['email'].errors }">
+        <div *ngIf="submitted && f['email'].errors" class="invalid-feedback">
+            <div *ngIf="f['email'].errors['required']">Email
+                is required</div>
+            <div *ngIf="f['email'].errors['email']">Email is
+                invalid</div>
+        </div>
+    </div>
+    <div class="col-12 col-md-12">
+        <div class="mb-3">
+            <label class="col-form-label" for="recipient-name">Date Of Birth</label>
+            <input type="date" class="form-control" formControlName="dob"
+                [ngClass]="{ 'is-invalid': submitted && f['dob'].errors }">
+            <div *ngIf="submitted && f['dob'].errors" class="invalid-feedback">
+                <div *ngIf="f['dob'].errors['required']">Date of birth is required</div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="col-form-label" for="recipient-name">Age</label>
+            <input type="number" class="form-control" formControlName="age" placeholder="Enter Age"
+                [ngClass]="{ 'is-invalid': submitted && f['age'].errors }">
+            <div *ngIf="submitted && f['age'].errors" class="invalid-feedback">
+                <div *ngIf="f['age'].errors['required']">Age is required</div>
+            </div>
+        </div>
+    </div>
+    <div class="mb-3">
+        <label class="col-form-label" for="recipient-name">Profile Pic</label>
+        <input class="form-control" formControlName="profile" type="file"
+            [ngClass]="{ 'is-invalid': submitted && f['profile'].errors }">
+        <div *ngIf="submitted && f['profile'].errors" class="invalid-feedback">
+            <div *ngIf="f['profile'].errors['required']">
+                Profile is required</div>
+        </div>
+    </div>
+
+    <div class="float-end">
+        <button type="submit" class="btn btn-success">{{isData.data.type == 'add' ? 'Save' : 'Update'}}</button>
+        <button type="button" class="btn btn-secondary ms-1" (click)="hideDialog()">Close</button>
+    </div>
+</form>

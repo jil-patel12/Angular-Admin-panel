@@ -1,0 +1,34 @@
+{
+    "data": [
+        {
+			"title": "Credited",
+			"message": "Credited in account",
+            "description": "Money trasfer",
+            "created": "12 Apr, 2022"
+		},
+        {
+            "title": "Debited",
+			"message": "Debited in account",
+            "description": "Money trasfer",
+            "created": "12 Apr, 2022"
+        },
+        {
+            "title": "Credited",
+			"message": "Credited in account",
+            "description": "Money trasfer",
+            "created": "12 Apr, 2022"
+        },
+        {
+            "title": "Debited",
+			"message": "Debited in account",
+            "description": "Money trasfer",
+            "created": "12 Apr, 2022"
+        },
+        {
+            "title": "Credited",
+			"message": "Credited in account",
+            "description": "Money trasfer",
+            "created": "12 Apr, 2022"
+        }
+    ]
+}

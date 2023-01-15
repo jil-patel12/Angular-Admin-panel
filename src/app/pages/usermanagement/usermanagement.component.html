@@ -1,0 +1,98 @@
+<div class="container-fluid">
+    <app-page-title title="User Management"></app-page-title>
+
+    <div class="row">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+
+                    <div *ngIf="loading">
+                        <app-loader></app-loader>
+                    </div>
+                    <div *ngIf="!loading">
+                        <div class="search-bar">
+                            <div class="search-input text-end">
+                                <button  pButton shape="round" size="small" status="primary"
+                                    (click)="addNewUser('add')">
+                                    <i class="mdi mdi-plus me-1"></i> Add user
+                                </button>
+                            </div>
+                        </div>
+
+                        <div class="p-table-wrapper mt-3" *ngIf="users">
+                            <p-table #dt [value]="users" [rows]="10" [paginator]="true"
+                                [globalFilterFields]="['name','country.name','representative.name','status']"
+                                [(selection)]="selectedProducts" [rowHover]="true" dataKey="id"
+                                currentPageReportTemplate="Showing {first} to {last} of {totalRecords} entries"
+                                [rowsPerPageOptions]="[10,25,50]" [showCurrentPageReport]="true">
+                                <ng-template pTemplate="caption">
+                                    <div class="p-d-flex p-ai-center p-jc-between">
+                                        <span class="p-input-icon-left">
+                                            <i class="pi pi-search"></i>
+                                            <input pInputText type="text"
+                                                (input)="dt.filterGlobal($event.target.value, 'contains')"
+                                                placeholder="Search..." />
+                                        </span>
+                                    </div>
+                                </ng-template>
+                                <ng-template pTemplate="header">
+                                    <tr>
+                                        <th pSortableColumn="profile-pic">Profile Pic <p-sortIcon field="profile-pic">
+                                            </p-sortIcon>
+                                        </th>
+                                        <th pSortableColumn="username">Username <p-sortIcon field="username">
+                                            </p-sortIcon>
+                                        </th>
+                                        <th pSortableColumn="email">Email <p-sortIcon field="email"></p-sortIcon>
+                                        </th>
+                                        <th pSortableColumn="date-of-birth">Date of birth <p-sortIcon
+                                                field="date-of-birth"></p-sortIcon>
+                                        </th>
+                                        <th pSortableColumn="age">Age <p-sortIcon field="age"></p-sortIcon>
+                                        </th>
+                                        <th pSortableColumn="created-at">Created At <p-sortIcon field="created-at">
+                                            </p-sortIcon>
+                                        </th>
+                                        <th pSortableColumn="status">Status <p-sortIcon field="status"></p-sortIcon>
+                                        </th>
+                                        <th pSortableColumn="action">Action <p-sortIcon field="action"></p-sortIcon>
+                                        </th>
+                                    </tr>
+                                </ng-template>
+                                <ng-template pTemplate="body" let-userData>
+                                    <tr>
+                                        <td><img src="{{userData.profile_pic}}" alt=""
+                                                class="avatar-md h-auto d-block rounded"></td>
+                                        <td>{{userData.user_name}}</td>
+                                        <td>{{userData.email}}</td>
+                                        <td><span
+                                                class="badge badge-pill badge-soft-success font-size-16">{{userData.dob}}</span>
+                                        </td>
+                                        <td>{{userData.age}}</td>
+                                        <td>{{userData.created_at}}</td>
+                                        <td>
+                                            <div class="form-check form-switch mb-3">
+                                                <input class="form-check-input" type="checkbox"
+                                                    id="flexSwitchCheckChecked" [checked]="userData.status ? 1 : 0">
+                                            </div>
+                                        </td>
+                                        <td>
+                                            <button pButton pRipple icon="pi pi-pencil"
+                                                class="p-button-rounded p-button-success p-mr-2"
+                                                (click)="addNewUser('edit',userData.id)"></button>&nbsp;
+                                            <button pButton pRipple icon="pi pi-trash"
+                                                class="p-button-rounded p-button-warning text-white"
+                                                (click)="deleteUser(userData)"></button>
+                                        </td>
+                                    </tr>
+                                </ng-template>
+                            </p-table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<p-confirmDialog [style]="{width: '450px'}"></p-confirmDialog>

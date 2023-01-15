@@ -1,0 +1,56 @@
+<!-- ========== Left Sidebar Start ========== -->
+<ng-template #contentTemplate>
+  <!--- Sidemenu -->
+  <div id="sidebar-menu">
+    <!-- Left Menu Start -->
+    <ul class="metismenu list-unstyled" id="side-menu" #sideMenu>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/dashboard']">
+          <i class="bx bx-home-circle"></i>
+          <span> Dashboard</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/usermanagement']">
+          <i class="bx bx-user"></i>
+          <span> User Management </span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/cms-management']">
+          <i class='bx bxs-book-content bx-flip-vertical'></i>
+          <span> Content Management </span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/notification-management']">
+          <i class='bx bxs-bell'></i>
+          <span> Notification Management</span>
+        </a>
+      </li>
+      <li>
+        <a href="javascript:void(0);" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}"
+          [routerLink]="['/cms']">
+          <i class='bx bxs-file'></i>
+          <span> CMS</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</ng-template>
+<!-- Sidebar -->
+
+<div class="vertical-menu">
+  <ngx-simplebar class="h-100" #componentRef>
+    <div *ngIf="!isCondensed">
+      <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </div>
+    <div *ngIf="isCondensed">
+      <ng-container *ngTemplateOutlet="contentTemplate"></ng-container>
+    </div>
+  </ngx-simplebar>
+</div>

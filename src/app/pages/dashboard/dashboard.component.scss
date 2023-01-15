@@ -1,0 +1,25 @@
+.chart-male {
+  display: flex;
+  margin-top: 45px;
+  margin-bottom: 45px;
+}
+
+.apex-chart {
+  margin: auto;
+}
+
+@media only screen and (max-width: 500px) {
+  .mediadate {
+    max-width: 100%;
+    min-width: 100%;
+  }
+}
+
+::ng-deep .md-drppicker .clear svg {
+  margin-top: -12px !important;
+}
+
+::ng-deep .md-drppicker
+{
+    margin-top: 0px !important;
+}

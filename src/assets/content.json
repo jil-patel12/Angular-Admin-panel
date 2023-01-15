@@ -1,0 +1,77 @@
+{
+	"data": [
+		{
+			
+			"name": "Bamboo Watch",
+			"description": "Product Description",
+			"file": "assets/images/small/img-1.jpg",
+			"price": 65
+		},
+        {
+			
+			"name": "Black Watch",
+			"description": "Product Description",
+			"file": "assets/images/small/img-2.jpg",
+			"price": 32
+		},{
+			
+			"name": "Table",
+			"description": "Product Description",
+			"file": "assets/images/small/img-3.jpg",
+			"price": 23
+		},{
+			
+			"name": "Chair",
+			"description": "Product Description",
+			"file": "assets/images/small/img-4.jpg",
+			"price": 12
+		},{
+			
+			"name": "Bracelet",
+			"description": "Product Description",
+			"file": "assets/images/small/img-5.jpg",
+			"price": 34
+		},{
+			
+			"name": "Shoes",
+			"description": "Product Description",
+			"file": "assets/images/small/img-6.jpg",
+			"price": 65
+		},
+        {
+			
+			"name": "Shoes",
+			"description": "Product Description",
+			"file": "assets/images/small/img-6.jpg",
+			"price": 65
+		},
+        {
+			
+			"name": "Shoes",
+			"description": "Product Description",
+			"file": "assets/images/small/img-6.jpg",
+			"price": 65
+		},
+        {
+			
+			"name": "Shoes",
+			"description": "Product Description",
+			"file": "assets/images/small/img-6.jpg",
+			"price": 65
+		},
+        {
+			
+			"name": "Shoes",
+			"description": "Product Description",
+			"file": "assets/images/small/img-6.jpg",
+			"price": 65
+		},
+        {
+			
+			"name": "Shoes",
+			"description": "Product Description",
+			"file": "assets/images/small/img-6.jpg",
+			"price": 65
+		}
+    ]
+}

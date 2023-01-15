@@ -1,0 +1,24 @@
+{
+    "data": [
+        {
+			"type": "Secutity",
+			"content": "CMS Description"
+		},
+        {
+            "type": "About us",
+			"content": "CMS Description"
+        },
+        {
+            "type": "Privacy policy",
+			"content": "CMS Description"
+        },
+        {
+            "type": "Terms & Conditions",
+			"content": "CMS Description"
+        },
+        {
+            "type": "About us",
+			"content": "CMS Description"
+        }
+    ]
+}
